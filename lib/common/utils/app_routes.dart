@@ -1,3 +1,4 @@
+import 'package:fashion_app/src/onboarding/views/onboarding_screen.dart';
 import 'package:fashion_app/src/splashscreen/views/splash_screen.dart';
 import 'package:fashion_app/src/entrypoint/views/app_entry_point.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,10 @@ final GoRouter _router = GoRouter(
       path: '/home',
       builder: (context, state) => const AppEntryPoint(),
     ),
-    // GoRoute(
-    //   path: '/onboarding',
-    //   builder: (context, state) => const OnBoardingScreen(),
-    // ),
+    GoRoute(
+      path: '/onboarding',
+      builder: (context, state) => const OnBoardingScreen(),
+    ),
     // GoRoute(
     //   path: '/review',
     //   builder: (context, state) => const ReviewsPage(),
