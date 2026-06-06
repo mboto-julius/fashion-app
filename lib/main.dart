@@ -5,11 +5,14 @@ import 'package:fashion_app/common/utils/kstrings.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fashion_app/common/utils/app_routes.dart';
 import 'package:fashion_app/src/splashscreen/views/splash_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // load the .env file before running the app
   await dotenv.load(fileName: Environment.fileName);
+  // initialize GetStorage
+  await GetStorage.init();
   runApp(const MyApp());
 }
 
