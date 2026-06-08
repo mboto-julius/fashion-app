@@ -1,3 +1,4 @@
+import 'package:fashion_app/src/auth/views/login_screen.dart';
 import 'package:fashion_app/src/onboarding/views/onboarding_screen.dart';
 import 'package:fashion_app/src/splashscreen/views/splash_screen.dart';
 import 'package:fashion_app/src/entrypoint/views/app_entry_point.dart';
@@ -23,6 +24,10 @@ final GoRouter _router = GoRouter(
       path: '/onboarding',
       builder: (context, state) => const OnBoardingScreen(),
     ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
     // GoRoute(
     //   path: '/review',
     //   builder: (context, state) => const ReviewsPage(),
@@ -47,10 +52,7 @@ final GoRouter _router = GoRouter(
     //   path: '/orders',
     //   builder: (context, state) => const OrdersPage(),
     // ),
-    // GoRoute(
-    //   path: '/login',
-    //   builder: (context, state) => const LoginPage(),
-    // ),
+
     // GoRoute(
     //   path: '/register',
     //   builder: (context, state) => const RegistrationPage(),

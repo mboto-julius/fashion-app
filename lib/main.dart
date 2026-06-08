@@ -1,3 +1,4 @@
+import 'package:fashion_app/src/onboarding/controllers/onboarding_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fashion_app/common/utils/environment.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fashion_app/common/utils/app_routes.dart';
 import 'package:fashion_app/src/splashscreen/views/splash_screen.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +15,17 @@ void main() async {
   await dotenv.load(fileName: Environment.fileName);
   // initialize GetStorage
   await GetStorage.init();
-  runApp(const MyApp());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => OnboardingNotifier(),
+        ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
