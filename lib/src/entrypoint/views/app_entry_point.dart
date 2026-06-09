@@ -107,7 +107,7 @@ class _ModernBottomNav extends StatelessWidget {
             activeIcon: Icons.shopping_cart,
             label: "Cart",
             isActive: currentIndex == 2,
-            badgeCount: 10, // STATIC BADGE (UI ONLY)
+            badgeCount: 10,
             onTap: () => onTap(2),
           ),
           _NavItem(
@@ -132,7 +132,6 @@ class _NavItem extends StatelessWidget {
   final int? badgeCount;
 
   const _NavItem({
-    super.key,
     required this.icon,
     required this.activeIcon,
     required this.label,
